@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Syne:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 min-h-screen bg-slate-100 font-body text-slate-800 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-lg bg-brand-blue px-4 py-2 font-medium text-white shadow-sm transition hover:bg-blue-600;
+  }
+
+  .btn-secondary {
+    @apply rounded-lg border border-slate-300 bg-white px-4 py-2 font-medium text-slate-700 transition hover:bg-slate-50;
+  }
+
+  .input-base {
+    @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-brand-blue focus:ring-2 focus:ring-blue-200;
+  }
+
+  .input-error {
+    @apply border-red-500 ring-2 ring-red-100 focus:border-red-500 focus:ring-red-200;
+  }
+}
+
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(30, 58, 95, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 58, 95, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.page-enter {
+  animation: fadeSlide 220ms ease-out;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
